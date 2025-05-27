@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Seventy</title>
+    <meta name="description" content="Daily insights on accomplishing what matters before time runs out">
+    <meta name="keywords" content="Muslim business, entrepreneurship, purpose, deadline thinking, Islamic values">
+    <meta name="author" content="Mission Seventy">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Mission Seventy - Daily insights on accomplishing what matters">
+    <meta property="og:description" content="Daily insights on accomplishing what matters before time runs out">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://missionseventy.com">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-yellow: #f4d03f;
+            --primary-dark: #2c3e50;
+            --text-color: #333;
+            --light-bg: #f8f8f8;
+            --white: #ffffff;
+            --border-color: #ddd;
+            --accent-orange: #e67e22;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 250px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        .main-content {
+            flex: 1;
+            max-width: 700px;
+            padding: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .logo-container {
+            margin-bottom: 25px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            background: #2c3e50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-yellow);
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="%23112e42"/><text x="100" y="60" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="%23f4d03f">MISSION</text><text x="100" y="100" text-anchor="middle" font-family="Arial" font-size="48" font-weight="bold" fill="%23f4d03f">70</text><text x="100" y="140" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="%23f4d03f">SEVENTY</text><line x1="50" y1="100" x2="78" y2="100" stroke="%23f4d03f" stroke-width="3"/><line x1="122" y1="100" x2="150" y2="100" stroke="%23f4d03f" stroke-width="3"/></svg>');
+            background-size: cover;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            line-height: 1.1;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            font-weight: normal;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: 1.0em;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        .date-display {
+            font-size: 0.9em;
+            color: #888;
+            margin: 30px 0;
+            text-align: center;
+            padding: 15px;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .nav {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--accent-orange);
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 12px 0;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: block;
+            margin-bottom: 10px;
+            border-left: 3px solid transparent;
+            padding-left: 15px;
+        }
+
+        .nav a:hover {
+            background: var(--primary-yellow);
+            color: var(--primary-dark);
+            border-left: 3px solid var(--primary-dark);
+            padding-left: 20px;
+        }
+
+        .post {
+            background: var(--white);
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--primary-yellow);
+            transition: transform 0.3s ease;
+        }
+
+        .post:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .post-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            line-height: 1.3;
+        }
+
+        .post-date {
+            color: #666;
+            font-size: 0.95em;
+            margin-top: 25px;
+            font-style: italic;
+            text-align: left;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .hijri-date {
+            color: var(--accent-orange);
+        }
+
+        .post-content {
+            font-size: 1.15em;
+            line-height: 1.8;
+        }
+
+        .post-content p {
+            margin-bottom: 18px;
+        }
+
+        .post-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .post-content p:first-child {
+            font-size: 1.2em;
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        .sidebar-info {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .sidebar-info h3 {
+            color: var(--primary-dark);
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .sidebar-info p {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .cta-button-small {
+            display: inline-block;
+            background: var(--primary-yellow);
+            color: var(--primary-dark);
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button-small:hover {
+            background: var(--primary-dark);
+            color: var(--primary-yellow);
+        }
+
+        .services-preview {
+            background: var(--white);
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 2px solid var(--primary-yellow);
+        }
+
+        .services-preview h3 {
+            color: var(--primary-dark);
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .services-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .services-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.05em;
+        }
+
+        .services-list li:last-child {
+            border-bottom: none;
+        }
+
+        .services-list li:before {
+            content: "→";
+            color: var(--accent-orange);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .archive-link {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .archive-link a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 12px 20px;
+            border: 2px solid var(--accent-orange);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .archive-link a:hover {
+            background: var(--accent-orange);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-color);
+            background: var(--white);
+            border-radius: 5px;
+        }
+
+        .footer-content {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 15px;
+                gap: 20px;
+            }
+            
+            .sidebar {
+                width: 100%;
+                position: static;
+            }
+
+            .nav {
+                padding: 15px;
+            }
+
+            .nav a {
+                display: inline-block;
+                margin: 5px 10px;
+                padding: 8px 12px;
+                border-left: none;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .post {
+                padding: 25px;
+            }
+
+            .post-date {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .social-links a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 80px;
+                height: 80px;
+                font-size: 12px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .post-title {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <header class="header">
+                <div class="logo-container">
+                    <div class="logo"></div>
+                </div>
+                <h1>Mission Seventy</h1>
+                <p class="tagline">Building what matters</p>
+            </header>
+
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#podcast">Podcast</a>
+            </nav>
+
+            <div class="sidebar-info">
+                <h3>Social Media Growth</h3>
+                <p>Authentic partnerships for Muslim businesses</p>
+                <a href="mailto:seventymission@gmail.com?subject=Partnership Inquiry" class="cta-button-small">Start Partnership</a>
+                <br><br>
+                <p>
+                    <a href="https://instagram.com/missionseventy" target="_blank">@missionseventy</a> | 
+                    <a href="mailto:seventymission@gmail.com">Email</a> | 
+                    <a href="#podcast">Podcast</a>
+                </p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+        <article class="post">
+            <h2 class="post-title">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
+            <p class="post-date">
+                <span class="hijri-date">Dhul Qi'dah 27, 1446 AH</span>
+                <span>Sunday, May 25, 2025</span>
+            </p>
+            <p class="post-date">
+                <span>Sunday, May 25, 2025</span>
+                <span class="hijri-date">Dhul Qi'dah 27, 1446 AH</span>
+            </p>
+            <div class="post-content">
+                <p>In the Name of Allah, the Most Gracious, the Most Merciful.</p>
+                
+                <p>Every meaningful endeavor begins with acknowledging the source of all guidance and success.</p>
+                
+                <p>Today marks the beginning of Mission Seventy—a commitment to accomplish what matters most before time runs out.</p>
+                
+                <p>This isn't just about building a business or creating content. It's about using the limited time we have to serve our community, grow with purpose, and leave something beneficial behind.</p>
+                
+                <p>The Prophet ﷺ said: "When a person dies, all their deeds end except three: a continuing charity, beneficial knowledge, or a righteous child who prays for them."</p>
+                
+                <p>May this mission contribute to beneficial knowledge that serves the ummah.</p>
+                
+                <p>The journey starts with bismillah.</p>
+            </div>
+        </article>
+
+        <div class="cta-section">
+            <h3>Social Media Growth for Muslim Businesses</h3>
+            <p>Ready to grow your business authentically while staying true to your Islamic values?</p>
+            <a href="mailto:seventymission@gmail.com?subject=Social Media Partnership Inquiry" class="cta-button">Start Partnership</a>
+        </div>
+
+        <div class="services-preview">
+            <h3>What I Offer</h3>
+            <ul class="services-list">
+                <li>Social media strategy aligned with Islamic principles</li>
+                <li>Content creation that serves your community</li>
+                <li>Growth partnerships for Muslim entrepreneurs</li>
+                <li>Weekly insights through Mission Seventy Podcast</li>
+                <li>Documentary storytelling for business impact</li>
+            </ul>
+        </div>
+
+        <article class="post">
+            <h2 class="post-title">Consistency Without Strategy Is Just Noise</h2>
+            <p class="post-date">
+                <span>Saturday, May 24, 2025</span>
+                <span class="hijri-date">Dhul Qi'dah 26, 1446 AH</span>
+            </p>
+            <div class="post-content">
+                <p>Consistency beats perfection, but only if you're consistent about the right things.</p>
+                
+                <p>Most Muslim business owners are perfectly consistent at posting random content. They show up daily but without direction.</p>
+                
+                <p>The businesses that grow consistently show up with intention. Same time, same value, same community focus.</p>
+                
+                <p>Consistency without strategy is just noise.</p>
+            </div>
+        </article>
+
+        <div class="archive-link">
+            <a href="#archive">View All Posts →</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p><strong>Mission Seventy</strong> - Daily insights on accomplishing what matters</p>
+            
+            <div class="social-links">
+                <a href="https://instagram.com/missionseventy" target="_blank">@missionseventy</a>
+                <a href="mailto:seventymission@gmail.com">Email Support</a>
+                <a href="#podcast">Podcast</a>
+            </div>
+            
+            <p>&copy; <span id="current-year"></span> Mission Seventy. All rights reserved.</p>
+            <p>
+                Building authentic businesses that serve the ummah while honoring Islamic values
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Update current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Display current dates
+        function updateDates() {
+            const now = new Date();
+            
+            // Gregorian date
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            const gregorianDate = now.toLocaleDateString('en-US', options);
+            document.getElementById('gregorian-date').textContent = gregorianDate;
+            
+            // Simple Hijri date approximation (you may want to use a proper Hijri calendar library)
+            const hijriMonths = [
+                "Muharram", "Safar", "Rabi' al-awwal", "Rabi' al-thani", 
+                "Jumada al-awwal", "Jumada al-thani", "Rajab", "Sha'ban", 
+                "Ramadan", "Shawwal", "Dhul Qi'dah", "Dhul Hijjah"
+            ];
+            
+            // This is a simplified approximation - for accurate dates, use a proper Hijri calendar API
+            const hijriYear = 1446; // Approximate current Hijri year
+            const hijriMonth = "Dhul Qi'dah"; // Update this manually or use an API
+            const hijriDay = 27; // Update this manually or use an API
+            
+            document.getElementById('hijri-date').textContent = `${hijriMonth} ${hijriDay}, ${hijriYear} AH`;
+        }
+        
+        updateDates();
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
